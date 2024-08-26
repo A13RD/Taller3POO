@@ -5,3 +5,8 @@ class Todo:
         self.description = description
         self.completed = completed
         self.tags = tags
+
+    def mark_completed(self):
+        self.completed = True
+
+
