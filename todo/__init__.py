@@ -1,10 +1,10 @@
 class Todo:
-    def __init__(self, code_id: int, title: str, description: str, completed: bool = False, tags: list[str] = None):
+    def __init__(self, code_id: int, title: str, description: str):
         self.code_id = code_id
         self.title = title
         self.description = description
-        self.completed = completed
-        self.tags = tags
+        self.completed: bool = False
+        self.tags: list[str] = []
 
     def mark_completed(self):
         self.completed = True
@@ -29,4 +29,9 @@ class TodoBook:
 
     def pending_todos(self) -> list:
         return [todo for todo in self.todos.values() if not todo.completed]
+
+    def completed_todos(self) -> list:
+        return [todo for todo in self.todos.values() if todo.completed]
+
+
 
